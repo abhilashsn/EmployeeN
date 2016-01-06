@@ -1,0 +1,26 @@
+<h3> New Employee </h3>
+
+<%= form_for @employee do |s|%>
+
+	<label> Name </label>
+	<%= s.text_field :name%><br/>
+
+	<label> Date of Birth </label>
+	<%= s.date_field :date_of_birth %><br/>
+
+	<label>Gender</label><br/>
+	<%= s.radio_button(:gender, "female", :checked => (:gender == 'female')? true:false) %>Female
+    <%= s.radio_button(:gender, "male", :checked => (:gender == 'male')? true:false) %>Male<br/>
+
+    <label> Date of Joining </label>
+    <%= s.date_field :date_of_joining%><br/>
+
+    <label>Address</label>
+    <%= s.text_area :address%><br/>
+
+    <label>State</label>
+    <%= s.text_field :state%><br/>
+
+    <%= s.submit %>
+
+    <%end%>
