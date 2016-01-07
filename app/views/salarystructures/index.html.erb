@@ -1,0 +1,35 @@
+<h3>SalaryStructure</h3>
+
+
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th> Employee Id </th>
+			<th> Basic </th>
+			<th> DA </th>
+			<th> HRA </th>
+			<th>conveyons</th>
+			<th>special alloance</th>
+			<th> details</th>
+		</tr>
+	</thead>
+
+
+
+	<% SalaryStructure.all.each do |structure| %>
+	<tbody>
+		<tr> 		 
+
+			<td> <%= structure.employee_id%>
+			<td> <%= structure.basic %> </td>
+			<td> <%= structure.da %> </td>
+			<td> <%= structure.hra %> </td>
+			<td> <%= structure.conveyonce %> </td>
+			<td> <%= structure.special_allowance%> </td>
+			<td> <%= structure.details %></td>
+		</tr>
+	</tbody>
+</table>
+<%end%>
+
+<%= link_to "New Employee",new_employee_path%> 

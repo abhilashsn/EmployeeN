@@ -9,10 +9,10 @@
 state_list = [
    "Karnataka",
    "Goa",
-   "Andhra"],
-  [ "Tamilnadu"]
+   "Andhra",
+  "Tamilnadu"
 ]
 
 state_list.each do |name|
-  Employee.create( state: name)
+  State.create( name: name)
 end

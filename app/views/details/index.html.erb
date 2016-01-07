@@ -1,9 +1,8 @@
 <h3>DETAILS</h3>
 
-<table> 
+<table class="table table-condensed">
 	<thead>
 		<tr>
-			<th> Employee Id </th>
 			<th> Designation </th>
 			<th> Department </th>
 			<th> Salary Structure </th>
@@ -13,11 +12,11 @@
 	<% Detail.all.each do |detail| %>
 	<tbody>
 		<tr>
-			<td> <%= detail.id %> </td>
 			<td> <%= detail.designation %> </td>
 			<td> <%= detail.department %> </td>
 			<td> <%= detail.salary_structure %> </td>
 		</tr>
 	</tbody>
 <%end%>
+</table>
 <%= link_to "New Employee",new_employee_path%> 
