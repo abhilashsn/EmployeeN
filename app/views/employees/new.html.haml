@@ -24,9 +24,10 @@
       %ul
         - for msg in @employee.errors.full_messages
           %li= msg
+
     .form-group
       %label Name
-      = f.text_field :name 
+      = f.text_field :name
       %br/
     .form-group
       %label Date of Birth
@@ -48,7 +49,7 @@
       = f.text_area :address
       %br/
     .form-group
-      %label State :
+      %label State
       %br/
       = f.collection_select :state_id, State.all, :id, :name, prompt: "select state"
       %br/

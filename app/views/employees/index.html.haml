@@ -1,62 +1,22 @@
-%h1{:style => "color:red"} EMPLOYEE
+=link_to 'Add Employee', new_employee_path, class: 'btn btn-primary pull-right'
 
-%ol{:class => "breadcrumb"}
-  %li
-    = link_to "Details", details_path
-  %li
-    = link_to "salarystructure", salary_structures_path
-  %li.active
+%h3 List of Employees
 
-    = link_to "new employee",new_employee_path
+- if @employees.empty?
+  .well
+    %p No employee in the database. You can choose the following options to upload employees:
+    %ol
+      %li Create record with form manually. Click to Add Employee button.
+      %li Run seed import. (rake db:seed)
+      %li Import employees from csv file.
 
+- else
 
-%table#myTable.table
-  %thead
-    %tr
-      %th
-        Employee Id
-      %th
-        Name
-      %th
-        Date Of Birth
-      %th
-        Gender
-      %th
-        Date of Joining
-      %th
-        Address
-      %th
-        State
-      %th
-        Perform
-  -@employees.each do |employee|
-    %tbody
-      %tr
-        %td
-          = employee.id
-        %td
-          = link_to employee.name,employee
-        %td
-          = employee.date_of_birth
-        %td
-          = employee.gender
-        %td
-          = employee.date_of_joining
-        %td
-          = employee.address
-        %td
-          = employee.state.try(:name)
-        %td
-          = link_to "edit",edit_employee_path(employee)
-          = link_to "delete",employee_path(employee), method: :delete, data: {confirm: "Are you sure?"}
+  =render 'list'
+
+%h3 Import Employees
+
 %p
   Download:
   = link_to "CSV", employees_path(format: "csv")
   = link_to "Excel", employees_path(format: "xls")
-
-
-
-
-
-
-
