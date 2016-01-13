@@ -1,4 +1,5 @@
-class SalarystructuresController < ApplicationController
+class SalaryStructuresController < ApplicationController
+
 	def index
 		@structures = SalaryStructure.all
 	end
@@ -7,8 +8,9 @@ class SalarystructuresController < ApplicationController
 	end
 	def create
 		@structure = SalaryStructure.new(structure_params)
+		SalaryStructure.generate_calc(@structure)
 		if @structure.save
-			redirect_to salarystructures_path
+			redirect_to salary_structures_path
 		else 
 			render "new"
 		end
@@ -16,6 +18,6 @@ class SalarystructuresController < ApplicationController
 
 private
 	def structure_params
-		params[:structure].permit(:basic, :da, :hra, :conveyonce, :special_allowance)
+		params[:salary_structure].permit(:basic, :conveyonce, :special_allowance,:employee_id)
 	end
 end

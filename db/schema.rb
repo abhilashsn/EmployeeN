@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160107083114) do
+ActiveRecord::Schema.define(version: 20160113060920) do
 
   create_table "apples", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -47,14 +47,15 @@ ActiveRecord::Schema.define(version: 20160107083114) do
   end
 
   create_table "salary_structures", force: :cascade do |t|
-    t.string   "basic"
-    t.string   "da"
-    t.string   "hra"
-    t.string   "conveyonce"
-    t.string   "special_allowance"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "employee_id"
+    t.integer  "basic"
+    t.integer  "conveyonce"
+    t.integer  "special_allowance"
+    t.integer  "da"
+    t.integer  "hra"
+    t.integer  "gross_salary"
   end
 
   create_table "states", force: :cascade do |t|
@@ -76,6 +77,7 @@ ActiveRecord::Schema.define(version: 20160107083114) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

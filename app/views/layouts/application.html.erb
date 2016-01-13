@@ -44,7 +44,10 @@
 
 <!-- Navbar -->  
 
-    <nav class="navbar navbar-default">
+
+
+
+    <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -64,7 +67,7 @@
 
 
 
-<% if user_signed_in?  %>      
+<% if user_signed_in? %>
       
       <ul class="nav navbar-nav">
     
@@ -73,7 +76,7 @@
       <% else %>
         <li>
       <% end %>
-        <a href = "/dashboards/index">Dashboard</a></li>
+        <%= link_to "Dashboards", dashboards_path %></li>
 
       <% if controller.controller_name == "employees" %>
         <li class="active">
@@ -94,7 +97,7 @@
       <% else %>
         <li>
       <% end %>
-        <%= link_to "salarystructures", salarystructures_path %></li>  
+        <%= link_to "salarystructures", salary_structures_path %></li>  
         
         
        

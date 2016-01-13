@@ -7,7 +7,7 @@ class DetailsController < ApplicationController
 	end
 	def create
 		@detail = Detail.new(detail_params)
-		if @detail.save
+		if @detail.save 
 			redirect_to details_path
 		else 
 			render "new"
@@ -46,7 +46,7 @@ class DetailsController < ApplicationController
 
 	private
 	def detail_params
-		params[:detail].permit(:designation, :department, :salary_structure)
+		params[:detail].permit(:designation, :department, :salary_structure,:employee_id)
 	end
 end
 

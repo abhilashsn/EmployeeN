@@ -1,0 +1,57 @@
+
+<div class = "container">
+<h3> Designation </h3>
+
+<%= form_for @detail  do |s|%>
+
+<% if @detail.errors.any? %>
+    <ul>
+        <% for msg in @detail.errors.full_messages %>
+        <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<div class="form-group ">
+
+
+    <label> Designation</label>
+    <%= s.text_field :designation%><br/>
+</div>
+
+<div class="form-group ">
+
+
+    <label> Department </label>
+   <%= s.text_field :department%><br/>
+</div>
+
+
+<div class="form-group ">
+<label>select Employee</label>
+<%= s.collection_select :employee_id ,Employee.all , :id , :name%><br/>
+</div>
+
+
+
+<div class="form-group ">
+
+<label> Salary Structure </label>
+<%= s.text_field :salary_structure%><br/>
+</div>
+
+
+
+
+
+<div class="form-group ">
+
+<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+ <i class="icon-ok icon-white"></i> Save changes
+<% end %>
+</div>
+
+<%end%>
+</div>
+
+

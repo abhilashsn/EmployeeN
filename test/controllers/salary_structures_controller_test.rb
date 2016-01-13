@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SalarystructuresControllerTest < ActionController::TestCase
+class SalaryStructuresControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,50 +1,59 @@
 class EmployeesController < ApplicationController
+
+  before_action :set_params, only: [:show,:edit,:destroy]
+
 	def index
-		@employees = Employee.all
-	end
+    @employees = Employee.listing_employees
+    @salarystructure = SalaryStructure.all
+     respond_to do |format|
+      format.html
+      format.csv { send_data @employees.to_csv }
+      format.xls
+    end
+  end
+
+   def show
+   end 
+  
 	def new 
 		@employee = Employee.new
 	end
+
 	def create
 		@employee = Employee.new(employee_params)
 		if @employee.save
 			redirect_to employees_path
-		else 
+		else
 			render "new"
 		end
 	end
+
 	def update
     respond_to do |format|
-      if @apple.update(employee_params)
+      if @employee.update(employee_params)
         format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
-        format.json { render :show, status: :ok, location: @employee }
       else
         format.html { render :edit }
-        format.json { render json: @employee.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /apples/1
-  # DELETE /apples/1.json
   def destroy
     @employee.destroy
     respond_to do |format|
       format.html { redirect_to employees_url, notice: 'employee was successfully destroyed.' }
-      format.json { head :no_content }
     end
-    def show
-      @employee = Employee.find(params[:id])
-    end
-    def edit
-    	@employee = Employee.find(params[:id])
-	end
+  end
 
 
- end
-
+  def edit
+  end
 
 	private
+  def set_params
+    @employee = Employee.find(params[:id])
+  end
+
 	def employee_params
 		params[:employee].permit(:name, :date_of_birth, :gender, :date_of_joining,:address, :state_id)
 	end

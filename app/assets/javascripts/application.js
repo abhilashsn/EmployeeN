@@ -14,6 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+ 
+
 $(document).ready(function(){
     $('#myTable').DataTable();
 });
+
+
+function myfunction(){
+if (document.getElementById("employee_name").value == ""){
+  alert("please enter the name")
+}
+}
+      

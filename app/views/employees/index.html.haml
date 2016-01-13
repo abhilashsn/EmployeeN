@@ -1,0 +1,61 @@
+%h1{:style => "color:red"} EMPLOYEE
+
+%ol{:class => "breadcrumb"}
+  %li
+    = link_to "Details", details_path
+  %li
+    = link_to "salarystructure", salary_structures_path
+  %li.active
+
+    = link_to "new employee",new_employee_path
+
+
+%table.table
+  %thead
+    %tr
+      %th
+        Employee Id
+      %th
+        Name
+      %th
+        Date Of Birth
+      %th
+        Gender
+      %th
+        Date of Joining
+      %th
+        Address
+      %th
+        State
+  -@employees.each do |employee|
+    %tbody
+      %tr
+        %td
+          = employee.id
+        %td
+          = link_to employee.name,employee
+        %td
+          = employee.date_of_birth
+        %td
+          = employee.gender
+        %td
+          = employee.date_of_joining
+        %td
+          = employee.address
+        %td
+          = employee.state.try(:name)
+        %td
+          = link_to "edit",edit_employee_path(employee)
+        %td
+          = link_to "delete",employee_path(employee), method: :delete, data: {confirm: "Are you sure?"}
+%p
+  Download:
+  = link_to "CSV", employees_path(format: "csv")
+  = link_to "Excel", employees_path(format: "xls")
+
+
+
+
+
+
+

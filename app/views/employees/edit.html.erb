@@ -1,27 +1,35 @@
 
 <h3> Edit Employee </h3>
 
-<%= form_for @employee do |s|%>
+<%= form_for Employee.find(params[:id]) do |s|%>
 
+<div class="form-group">
 	<label> Name </label>
 	<%= s.text_field :name%><br/>
-
+</div>
+<div class="form-group">
 	<label> Date of Birth </label>
 	<%= s.date_field :date_of_birth %><br/>
-
+</div>
+<div class="form-group">
 	<label>Gender</label><br/>
 	<%= s.radio_button(:gender, "female", :checked => (:gender == 'female')? true:false) %>Female
     <%= s.radio_button(:gender, "male", :checked => (:gender == 'male')? true:false) %>Male<br/>
+</div>
 
+<div class="form-group"%>
     <label> Date of Joining </label>
     <%= s.date_field :date_of_joining%><br/>
-
+</div>
+<div class="form-group"%>
     <label>Address</label>
     <%= s.text_area :address%><br/>
+</div>
 
+<div class="form-group"%>
     <label>State</label>
     <%= s.text_field :state%><br/>
-
+</div>
     <%= s.submit %>
 
     <%end%>

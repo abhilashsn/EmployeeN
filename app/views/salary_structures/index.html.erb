@@ -4,32 +4,34 @@
 <table class="table table-condensed">
 	<thead>
 		<tr>
-			<th> Employee Id </th>
+			<th> Employee </th>
 			<th> Basic </th>
 			<th> DA </th>
 			<th> HRA </th>
 			<th>conveyons</th>
 			<th>special alloance</th>
-			<th> details</th>
+			<th>gross salary</th>
 		</tr>
 	</thead>
-
-
-
-	<% SalaryStructure.all.each do |structure| %>
 	<tbody>
-		<tr> 		 
-
-			<td> <%= structure.employee_id%>
+		<% @structures.all.each do |structure| %>
+		<tr> 	
+			 
+			<td> <%= structure.employee.try(:name)%></td>
 			<td> <%= structure.basic %> </td>
 			<td> <%= structure.da %> </td>
 			<td> <%= structure.hra %> </td>
 			<td> <%= structure.conveyonce %> </td>
 			<td> <%= structure.special_allowance%> </td>
-			<td> <%= structure.details %></td>
+			<td> <%= structure.gross_salary %></td>
+			
 		</tr>
+		<%end%>
 	</tbody>
 </table>
-<%end%>
 
-<%= link_to "New Employee",new_employee_path%> 
+
+<%= link_to "new structure", new_salary_structure_path%>
+
+
+<%#= SalaryStructure.gross_salary%>

@@ -1,0 +1,59 @@
+:javascript
+
+  function ValidateEmployee()
+  {
+  var emp_name = $("#employee_name").val();
+  var add_name = $("#employee_address").val();
+
+  if(emp_name == "")
+  {
+    alert("Employee name cant blank");
+    return false;
+  }
+  else if(add_name == "")
+  {
+    alert("address cant be blank");
+  }
+
+  };
+
+
+.container
+  %h3 New Employee
+  = form_for @employee do |f|
+    - if @employee.errors.any?
+      %ul
+        - for msg in @employee.errors.full_messages
+          %li= msg
+    .form-group
+      %label Name
+      = f.text_field :name 
+      %br/
+    .form-group
+      %label Date of Birth
+      = f.date_field :date_of_birth
+      %br/
+    .form-group
+      %label Gender
+      %br/
+      = f.radio_button(:gender, "female", :checked => (:gender == 'female')? true:false)
+      Female
+      \#{f.radio_button(:gender, "male", :checked => (:gender == 'male')? true:false)}Male
+      %br/
+    .form-group
+      %label Date of Joining
+      = f.date_field :date_of_joining
+      %br/
+    .form-group
+      %label Address
+      = f.text_area :address
+      %br/
+    .form-group
+      %label State :
+      %br/
+      = f.collection_select :state_id, State.all, :id, :name, prompt: "select state"
+      %br/
+      %br/
+    .form-group
+      = f.submit value: "Save Employees",class: "btn btn-primary", onclick:'return ValidateEmployee();'
+

@@ -1,8 +1,90 @@
+<style type="text/css">
+	.label a{
+		color:white;
+	}
+</style>
+<div class="header">
+<%#= weekday%>
+
+  <%#=scope :having_flat_wheels, joins(:wheels).where("wheels.flat=?", true).uniq%>
 
 
-Employee: <%= @employee.employee_id %>
-Name: <%= @employee.name %>
-Date_Of_Birth: <%= @employee.date_of_birth %>
-Gender: <%= @employee.gender%>
-Date_of_joining: <%= @employee.date_of_joining%>
-Address: <%= @employee.address%>
+	
+		<span class="label label-primary">
+			<%= @employee.name %>
+		</span>
+		<label> </label>
+		<span class="label label-primary">
+			<%= @employee.gender %>
+		</span></h4>
+		<span class="label label-primary">
+			<%= @employee.date_of_birth %>
+		</span></h4>
+		<span class="label label-primary">
+			<%= @employee.date_of_joining %>
+		</span></h4>
+		<span class="label label-primary">
+			<%= @employee.address %>
+		</span></h4>
+		<span class="label label-primary">
+    		<% @employee.details.each do |detail|%>
+   			 <%= detail.designation %>
+			 <%= detail.salary_structure %>
+			<%end%>
+		</span></h4>
+
+		<div class ="pull-right">
+
+			<%= link_to "EDIT THIS Employee", edit_employee_path , class: "btn btn-primary btn-xs"%>
+		
+					<%= link_to "DELETE THIS", employee_path(@employee), method: :delete, data: {confirm: "Are you sure?"} , class: "btn btn-danger btn-xs "%>
+		
+		<%=link_to "BACK ",  employees_path , class: "btn btn-primary btn-xs"%>
+</div><br/>
+
+<div class= "row">
+	<div class="col-md-8">
+
+
+	</div>
+	<div class="col-md-4">
+
+
+	</div><br/>
+</div>
+
+
+
+
+<div class="panel panel-primary">
+<div class="panel-heading"><h3>Detail Listing (<%= @employee.details.count%>)</h3></div>
+<div class="panel-body">
+
+<div class="table-responsive" style=" width: 100%; margin: 0; overflow-y: auto; ">
+<table class="table table-bordered table-hover table-condensed " style="height:50px; ">
+	<thead>
+		<tr>
+			<th>Sl No</th>
+			<th>Designation</th>
+			<th>Department</th>
+			<th>SalaryStructure</th>
+		</tr>
+	</thead>
+	<body>
+		<% @employee.details.each_with_index do |details,index| %>
+		<tr>
+			<th><%=index+1%></th>
+			<th><%=details.designation%></th>
+			<th><%=details.department%></th>
+			<th><%=details.salary_structure%></th>
+			
+		</tr>
+		<%end %>
+	</body>
+</table>
+</div>
+</div>
+</div>
+
+
+

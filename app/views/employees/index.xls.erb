@@ -1,4 +1,5 @@
-<h3>EMPLOYEE DETAILS</h3>
+
+
 
 <table class="table table-condensed">
 	<thead>
@@ -23,6 +24,12 @@
 			<td> <%= employee.date_of_joining %> </td>
 			<td> <%= employee.address %> </td>
 			<td> <%= employee.state.name %> </td>
+			<td> <%= link_to "edit",edit_employee_path(employee.id)%></td>
+			<td> <%= link_to "delete",employee_path(employee.id), method: :delete, data: {confirm: "Are you sure?"} %> </td>  
+
+                       
+                     
+
 		</tr>
 	</tbody>
 
@@ -30,5 +37,11 @@
 </table>
 
 <%= link_to "New Employee",new_employee_path%> 
+ <%= link_to "Download CSV", employees_path(format: "csv") %>
+
+
+
+
+
 
 
