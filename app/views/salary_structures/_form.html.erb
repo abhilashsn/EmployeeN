@@ -1,25 +1,25 @@
+
+
+<h3> Enter Gross</h3><hr/>
 <%= form_for(@structure)  do |s|%>
 
-<div class="form-group ">
-<label> Basic </label>
-<%= s.number_field :basic%><br/>
-</div>
 
 
-<div class="form-group ">
-<label>conveyonce </label>
-<%= s.number_field :conveyonce%><br/>
-</div>
 
-<div class="form-group ">
+    <div class="form-group ">
+      <label>Gross Salary:</label>
+      <%= s.text_field :gross_salary%><br/>
+    </div>
+
+
+
+
+    <div class="form-group ">
 <label>select Employee</label>
 <%= s.collection_select :employee_id ,Employee.all , :id , :name%><br/>
 </div>
 
-<div class="form-group ">
-<label>special.allowance</label>
-<%= s.number_field :special_allowance%><br/>
-</div>
+
 
 
 

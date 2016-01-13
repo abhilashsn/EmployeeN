@@ -7,6 +7,7 @@ class Employee < ActiveRecord::Base
   validates_format_of :name, :with => /\A[^0-9`!@#\$%\^&*+_=]+\z/
   validates_presence_of :state,:gender,:date_of_joining
   validates_presence_of :date_of_birth, if: :valid_date
+  validates_uniqueness_of :name
 
   def valid_date
     if !self.date_of_joining.blank?
@@ -21,8 +22,6 @@ class Employee < ActiveRecord::Base
   end
 
 
-  def self.employee_new
-    Employee.new(employee_params)
-  end
+
 
 end

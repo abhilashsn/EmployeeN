@@ -18,6 +18,6 @@ class SalaryStructuresController < ApplicationController
 
 private
 	def structure_params
-		params[:salary_structure].permit(:basic, :conveyonce, :special_allowance,:employee_id)
+		params[:salary_structure].permit(:basic, :conveyonce, :special_allowance,:gross_salary,:da,:employee_id)
 	end
 end
