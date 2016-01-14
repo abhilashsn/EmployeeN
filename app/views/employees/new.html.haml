@@ -1,20 +1,4 @@
-:javascript
 
-  function ValidateEmployee()
-  {
-  var emp_name = $("#employee_name").val();
-  var add_name = $("#employee_address").val();
-
-  if(emp_name == "")
-  {
-    alert("Employee name cant blank");
-    return false;
-  }
-  else if(add_name == "")
-  {
-    alert("address cant be blank");
-  }
-  };
 
 
 .container
@@ -25,35 +9,36 @@
         - for msg in @employee.errors.full_messages
           %li= msg
 
-    .form-group
-      %label Name
+    .form-group.col-xs-6
+      %label.col-xs-12 Name
       = f.text_field :name
       %br/
-    .form-group
-      %label Date of Birth
+    .form-group.col-xs-6
+      %label.col-xs-12 Date of Birth
       = f.date_field :date_of_birth
       %br/
-    .form-group
-      %label Gender
+    .form-group.col-xs-6
+      %label.col-xs-12  Gender
       %br/
       = f.radio_button(:gender, "female", :checked => (:gender == 'female')? true:false)
       Female
       \#{f.radio_button(:gender, "male", :checked => (:gender == 'male')? true:false)}Male
       %br/
-    .form-group
-      %label Date of Joining
+    .form-group.col-xs-6
+      %label.col-xs-12  Date of Joining
       = f.date_field :date_of_joining
       %br/
-    .form-group
-      %label Address
+    .form-group.col-xs-6
+      %label.col-xs-12 Address
       = f.text_area :address
       %br/
-    .form-group
-      %label State
+    .form-group.col-xs-6
+      %label.col-xs-12 State
       %br/
       = f.collection_select :state_id, State.all, :id, :name, prompt: "select state"
       %br/
       %br/
+
     .form-group
       = f.submit value: "Save Employees",class: "btn btn-primary", onclick:'return ValidateEmployee();'
 

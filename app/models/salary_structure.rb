@@ -4,15 +4,12 @@ class SalaryStructure < ActiveRecord::Base
   validates_presence_of :conveyonce, if: :valid_conv
 
 
-
-
-
   def valid_conv
-    salary_gross = (self.gross_salary*10)/100
+    salary_gross = (self.gross_salary.to_i * 10)/100
     if salary_gross > 1600
       self.conveyonce = 1600
     else
-      self.conveyonce = (self.gross_salary*10)/100
+      self.conveyonce = (self.gross_salary.to_i * 10)/100
     end
   end
 
@@ -28,11 +25,6 @@ class SalaryStructure < ActiveRecord::Base
   end
 
 
-
-
-
-
-
-    end
+end
 
 

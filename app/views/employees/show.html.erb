@@ -77,7 +77,7 @@
 			<th><%=details.designation%></th>
 			<th><%=details.department%></th>
 			<th><%=details.salary_structure%></th>
-			
+
 		</tr>
 		<%end %>
 	</body>
@@ -87,4 +87,11 @@
 </div>
 
 
+  <% if @employee.details.empty?%>
+  <%= link_to "Assign designation", new_detail_path,class: "btn btn-danger"%>
+  <%end%>
+
+
+
+  <%= render 'form'%>
 

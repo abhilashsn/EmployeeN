@@ -1,0 +1,33 @@
+
+<div class="container">
+  <h3> Select leave head for Employee</h3><hr/>
+  <%= form_for @employee  do |s|%>
+
+
+
+
+      <div class="form-group ">
+        <label>Leave Head</label>
+        <%= s.collection_check_boxes :leave_head_ids, LeaveHead.all, :id, :name do |b| %>
+          <div class="collection-check-box">
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+        <% end %>
+      </div>
+
+
+
+
+
+
+
+      <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+          <i class="icon-ok icon-white"></i> Save changes
+      <% end %>
+      </div>
+
+  <%end%>
+  </div>
+
+

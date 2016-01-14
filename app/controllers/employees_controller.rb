@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
 
-  before_action :set_params, only: [:show,:edit,:destroy]
+  before_action :set_params, only: [:show,:edit,:destroy,:add_leave]
 
 	def index
     @employees = Employee.listing_employees
@@ -29,13 +29,13 @@ class EmployeesController < ApplicationController
 	end
 
 	def update
-    respond_to do |format|
-      if @employee.update(employee_params)
-        format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
+    @employee = Employee.find(params[:id])
+    if @employee.update_attributes(employee_params)
+        redirect_to employees_path
       else
-        format.html { render :edit }
+         render :edit
       end
-    end
+
   end
 
   def destroy
@@ -43,6 +43,10 @@ class EmployeesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to employees_url, notice: 'employee was successfully destroyed.' }
     end
+  end
+
+  def add_leave
+    @leave = @employee.leave_heads
   end
 
 
@@ -55,6 +59,6 @@ class EmployeesController < ApplicationController
   end
 
 	def employee_params
-		params[:employee].permit(:name, :date_of_birth, :gender, :date_of_joining,:address, :state_id)
+		params[:employee].permit(:name, :date_of_birth, :gender, :date_of_joining,:address, :state_id, leave_head_ids: [ ])
 	end
 end

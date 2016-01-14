@@ -1,0 +1,30 @@
+<h2 style="color:#9C2542"> Employee Leave Balance</h2>
+
+
+
+
+
+
+
+
+<table class="table table-bordered" id="myTable">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Balance Number</th>
+  </tr>
+  </thead>
+
+
+  <tbody>
+  <%@leaves.each do |leave|%>
+      <tr>
+        <td><%= leave.id %></td>
+        <td><%= leave.balance_number %></td>
+      </tr>
+  <%end%>
+  </tbody>
+</table>
+
+<br/>
+<%= render "form"%>

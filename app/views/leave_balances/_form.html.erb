@@ -1,0 +1,31 @@
+
+<div class="container">
+  <h3> Select leave head for Employee</h3><hr/>
+  <%= form_for @leave  do |s|%>
+
+
+
+
+
+      <label>Leave  :</label><br/>
+      <%= s.collection_select :leave_head_id, LeaveHead.all, :id, :name, prompt: "select leavehead"%><br/><br/>
+
+
+
+      <label>Employee :</label><br/>
+      <%= s.collection_select :employee_id, Employee.all, :id, :name, prompt: "select employee"%><br/><br/>
+
+
+
+
+
+
+      <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+          <i class="icon-ok icon-white"></i> Save changes
+      <% end %>
+      </div>
+
+  <%end%>
+  </div>
+
+

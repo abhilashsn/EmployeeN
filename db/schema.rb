@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113084010) do
+ActiveRecord::Schema.define(version: 20160114113537) do
 
   create_table "apples", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20160113084010) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "employee_leave_heads", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "employee_id"
+    t.integer  "leave_head_id"
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string   "name"
     t.date     "date_of_birth"
@@ -44,6 +51,20 @@ ActiveRecord::Schema.define(version: 20160113084010) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "state_id"
+  end
+
+  create_table "leave_balances", force: :cascade do |t|
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "employee_id"
+    t.integer  "leave_head_id"
+    t.integer  "balance_number"
+  end
+
+  create_table "leave_heads", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "salary_structures", force: :cascade do |t|
