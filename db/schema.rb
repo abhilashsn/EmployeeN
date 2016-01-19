@@ -11,11 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114113537) do
+ActiveRecord::Schema.define(version: 20160119104716) do
+
+  create_table "allot_leaves", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "employee_id"
+  end
 
   create_table "apples", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "apply_leaves", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "employee_id"
+    t.string   "name"
   end
 
   create_table "details", force: :cascade do |t|
@@ -53,16 +67,70 @@ ActiveRecord::Schema.define(version: 20160114113537) do
     t.integer  "state_id"
   end
 
+  create_table "leave_allotments", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "employee_id"
+    t.integer  "leave_head_id"
+    t.date     "from_date"
+    t.date     "to_date"
+    t.integer  "leave_structure_id"
+  end
+
+  create_table "leave_appends", force: :cascade do |t|
+    t.integer  "leave_allotment_id"
+    t.integer  "leave_structure_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "head_value"
+  end
+
+  create_table "leave_applies", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "leave_allotment_id"
+  end
+
+  create_table "leave_assignments", force: :cascade do |t|
+    t.integer  "leave_structure_id"
+    t.integer  "leave_head_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "leave_balances", force: :cascade do |t|
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "employee_id"
-    t.integer  "leave_head_id"
     t.integer  "balance_number"
   end
 
   create_table "leave_heads", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "leave_balance_id"
+    t.integer  "number"
+    t.integer  "leave_structure_id"
+  end
+
+  create_table "leave_structures", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leaves", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "employee_id"
+  end
+
+  create_table "numbers", force: :cascade do |t|
+    t.integer  "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

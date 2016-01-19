@@ -1,0 +1,21 @@
+<h1>leave assignment</h1>
+
+
+<% if @leave_assignment.errors.any? %>
+    <ul>
+        <% for msg in @leave_assignment.errors.full_messages %>
+        <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+
+<h3 style="color:#9C2542"> ADD LEAVE HEADS</h3>
+
+<%= form_for [@leave_structure,@leave_assignment] do |l|%>
+    <label>Leave  :</label><br/>
+      <%= l.collection_select :leave_head_id, LeaveHead.all, :id, :name, prompt: "select leavehead"%><br/><br/>
+
+
+    <%= l.submit %>
+<%end%>

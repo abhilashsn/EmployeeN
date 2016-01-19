@@ -1,4 +1,5 @@
 <h2 style="color:#9C2542"> Employee Leave Balance</h2>
+<%= @employees.name%>
 
 
 
@@ -10,21 +11,24 @@
 <table class="table table-bordered" id="myTable">
   <thead>
   <tr>
-    <th>Id</th>
-    <th>Balance Number</th>
+    <th>LeaveHeads</th>
+    <th>Balance</th>
   </tr>
   </thead>
 
 
   <tbody>
-  <%@leaves.each do |leave|%>
+  <% @employees.all do |employee|%>
+  <% employee.leave_heads.each do |leave|%>
       <tr>
-        <td><%= leave.id %></td>
-        <td><%= leave.balance_number %></td>
+        <td><%= leave.pluck(:name) %></td>
+        <td><%= leave.pluck(:number)%></td>
       </tr>
-  <%end%>
+    <%end%>
+    <%end%>
+
   </tbody>
 </table>
 
 <br/>
-<%= render "form"%>
+<%#= render "form"%>

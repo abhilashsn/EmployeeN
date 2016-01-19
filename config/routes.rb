@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :leave_applies
+  get 'leave_allotments/index'
+
   get 'static_pages/home'
 
   get 'static_pages/help'
 
   devise_for :users
-
-  resources :employees
 
   resources :details
 
@@ -13,9 +14,24 @@ Rails.application.routes.draw do
 
   resources :dashboards
 
-  resources :leave_heads
-
   resources :leave_balances
+
+  resources :employees 
+  
+  resources :leave_allotments do
+    resources :leave_applies 
+    end
+
+
+
+  resources :employees do
+  resources :leave_heads 
+  end
+
+  resources :leave_structures do 
+    resources :leave_assignments
+  end
+
 
   get 'employees/add_leave'
   # The priority is based upon order of creation: first created -> highest priority.

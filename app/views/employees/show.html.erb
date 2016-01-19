@@ -32,6 +32,19 @@
 			 <%= detail.salary_structure %>
 			<%end%>
 		</span></h4>
+		<span class="label label-primary">
+    		<% @employee.leave_heads.each do |leave_head|%>
+   			 <%= leave_head.name %>
+			<%end%>
+		</span></h4>
+		<span >
+			<%#= link_to "opening leave balance", employee_leave_heads_path(employee.id), class: "btn btn-primary btn-xs"%>
+		</span></h4>
+		<span >
+			<%#	= link_to "apply leave", leaves_path, class: "btn btn-primary btn-xs"%>
+		</span></h4>
+
+
 
 		<div class ="pull-right">
 

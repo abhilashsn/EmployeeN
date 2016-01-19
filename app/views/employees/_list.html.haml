@@ -44,6 +44,5 @@
           = employee.address
         %td
           = employee.state.try(:name)
-        %td
-          = link_to "edit",edit_employee_path(employee), class: 'btn btn-success'
-          = link_to "X",employee_path(employee), method: :delete, data: {confirm: "Are you sure?"},class: 'btn btn-danger'
+      
+

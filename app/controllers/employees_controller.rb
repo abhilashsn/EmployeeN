@@ -4,6 +4,7 @@ class EmployeesController < ApplicationController
 
 	def index
     @employees = Employee.listing_employees
+   # @emp = @employees.details
     @salarystructure = SalaryStructure.all
      respond_to do |format|
       format.html
@@ -59,6 +60,6 @@ class EmployeesController < ApplicationController
   end
 
 	def employee_params
-		params[:employee].permit(:name, :date_of_birth, :gender, :date_of_joining,:address, :state_id, leave_head_ids: [ ])
+		params[:employee].permit(:name, :date_of_birth, :gender, :date_of_joining,:address, :state_id, :from_date,:to_date,leave_head_ids: [ ])
 	end
 end

@@ -1,0 +1,36 @@
+
+
+
+<center>
+
+<%= render "form"%>
+</center><br/><br/><br/>
+
+<h2 style="color:#9C2542">  Leave Structure</h2>
+
+
+
+<table class="table table-bordered" id="myTable">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+
+<tbody>
+<% @leave_structures.each do |leave_structure|%> 
+    <tr>
+      <td><%= leave_structure.id %></td>
+      <td><%= leave_structure.name %></td>
+      <td><%=link_to "settings", leave_structure_leave_assignments_path(leave_structure) %></td>
+    </tr>
+    <%end%>
+</tbody>
+</table>
+
+<br/>
+
+
+

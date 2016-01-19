@@ -1,28 +1,32 @@
 <h2 style="color:#9C2542"> Employee Leave Head</h2>
 
 
+
 <table class="table table-bordered" id="myTable">
   <thead>
     <tr>
       <th>Id</th>
       <th>Name</th>
-      <th>action</th>
+      <th>number</th>
     </tr>
   </thead>
 
 
 <tbody>
-<%@leaves.each do |leave|%>
+<% @leave_heads.each do |leave|%> 
     <tr>
       <td><%= leave.id %></td>
       <td><%= leave.name %></td>
-      <td> <%= link_to "edit",edit_leave_head_path(leave), class: 'btn btn-success'%>
-       <%= link_to "X",leave_head_path(leave), method: :delete, data: {confirm: "Are you sure?"},class: 'btn btn-danger'%>
+      <td> 
       </td>
     </tr>
-<%end%>
+    <%end%>
 </tbody>
 </table>
 
 <br/>
-<%= render "form"%>
+<%#= render "form"%>
+
+<%#= link_to "apply leave", leave_allotments_path(employee.id,leave_head.id)%>
+
+

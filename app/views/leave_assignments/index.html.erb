@@ -1,0 +1,33 @@
+
+
+
+
+
+<h2 style="color:#9C2542">  Leave assignment</h2>
+
+
+
+<table class="table table-bordered" id="myTable">
+  <thead>
+    <tr>
+      <th>Head Id</th>
+      <th>Structure Id</th>
+    </tr>
+  </thead>
+
+
+<tbody>
+<% @leave_assignments.each do |leave_assignment|%> 
+    <tr>
+      <td><%= leave_assignment.leave_head.name %></td>
+      <td><%= leave_assignment.leave_structure_id %></td>
+    </tr>
+    <%end%>
+</tbody>
+</table>
+
+<br/>
+<%= link_to "add leave head",new_leave_structure_leave_assignment_path%>
+
+
+

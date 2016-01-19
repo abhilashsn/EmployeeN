@@ -16,3 +16,15 @@ state_list = [
 state_list.each do |name|
   State.create( name: name)
 end
+
+
+number_list = [
+   1,
+   2,
+   3,
+   4
+]
+
+number_list.each do |name|
+  Number.create( number: name)
+end

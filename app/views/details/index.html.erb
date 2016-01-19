@@ -13,7 +13,7 @@
 	<% Detail.all.each do |detail| %>
 	<tbody>
 		<tr>
-			<td> <%= detail.employee.name%></td>
+			<td> <%= detail.employee.try(:name) %></td>
 			<td> <%= detail.designation %> </td>
 			<td> <%= detail.department %> </td>
 			<td> <%= detail.salary_structure %> </td>

@@ -2,10 +2,17 @@ class Employee < ActiveRecord::Base
   has_many :employee_leave_heads, dependent: :destroy
   has_many :leave_heads, :through => :employee_leave_heads
 
+
   has_many :leave_balances
   belongs_to :state
   has_many :details
-  has_many :salary_structures
+  has_one :salary_structure
+
+  has_many :leaves
+  has_many :allot_leaves
+  has_many :leave_allotments
+
+  belongs_to :leave_structure
 
   validates_format_of :name, :with => /\A[^0-9`!@#\$%\^&*+_=]+\z/
   validates_presence_of :state,:gender,:date_of_joining
@@ -13,7 +20,7 @@ class Employee < ActiveRecord::Base
   validates_uniqueness_of :name
 
   #def valid_date
-   #"#{ if !self.date_of_joining.blank?
+   #{ if !self.date_of_joining.blank?
     #  if !(self.date_of_joining > self.date_of_birth+10.years)
      #   errors.add(:date_of_birth, "is invalid")
      # end

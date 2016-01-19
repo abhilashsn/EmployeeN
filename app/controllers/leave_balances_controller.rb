@@ -1,8 +1,9 @@
 class LeaveBalancesController < ApplicationController
     def index
-      @employee = Employee.all
-      @leave = LeaveBalance.new
-      @leaves = LeaveBalance.all
+      @employees = Employee.all
+      @leaves = LeaveHead.all
+      @leave_balance = LeaveBalance.all
+
     end
 
     def new
@@ -33,7 +34,7 @@ class LeaveBalancesController < ApplicationController
   end
   private
   def leave_params
-    params[:leave_balance].permit(:balance_number,employee_ids: [],leave_head_ids: [])
+    #params[:leave_balance].permit(:balance_number,  :leave_head_id,employee_ids: [])
   end
 
 
