@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'haml'
 #gem 'client_side_validations'
+gem 'jquery-turbolinks'
 
 
 # See https://github.com/rails/execjs#readme for more supported runtimes

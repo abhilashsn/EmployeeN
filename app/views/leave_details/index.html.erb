@@ -1,0 +1,56 @@
+
+
+
+<table class="table table-bordered" id="myTable">
+  <thead>
+    <tr>
+      <th>
+        Employee Id
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Designation
+      </th>
+      <th>
+        Department
+      </th>
+      <th>
+        Salary Structure
+      </th>
+        <th>
+          Address
+      </th>
+      
+    </thead>
+  </tr>
+  <%@employees.each do |employee|%>
+    <tbody>
+      <tr>
+        <td>
+          <%= employee.id%>
+        </td>
+        <td>
+          <%= link_to employee.name,employee%>
+        </td>
+        <td>
+          <%= employee.details.take.try(:designation)%>
+        </td>
+        <td>
+          <%= employee.details.take.try(:department)%>
+        </td>
+
+        <td>
+          <%= employee.details.take.try(:salary_structure)%>
+        </td>
+       
+       
+        <td>
+          <%= link_to "apply leave", employee_leave_employees_path(employee) %>
+        </td>
+      </tr>
+    </tbody>
+  <%end%>
+      
+

@@ -10,8 +10,8 @@
 <table class="table table-bordered" id="myTable">
   <thead>
     <tr>
-      <th>Head Id</th>
-      <th>Structure Id</th>
+      <th>ID</th>
+      <th>HEAD</th>
     </tr>
   </thead>
 
@@ -19,8 +19,8 @@
 <tbody>
 <% @leave_assignments.each do |leave_assignment|%> 
     <tr>
-      <td><%= leave_assignment.leave_head.name %></td>
-      <td><%= leave_assignment.leave_structure_id %></td>
+      <td><%= leave_assignment.leave_head.try(:id)%></td>
+      <td><%= leave_assignment.leave_head.try(:name)%></td>
     </tr>
     <%end%>
 </tbody>

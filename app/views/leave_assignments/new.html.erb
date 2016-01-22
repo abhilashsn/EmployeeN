@@ -1,4 +1,6 @@
-<h1>leave assignment</h1>
+
+<center>
+<h2>leave assignment</h2>
 
 
 <% if @leave_assignment.errors.any? %>
@@ -10,12 +12,18 @@
 <% end %>
 
 
-<h3 style="color:#9C2542"> ADD LEAVE HEADS</h3>
+<h3 style="color:#9C2542"> ADD LEAVE HEADS</h3><br/>
 
 <%= form_for [@leave_structure,@leave_assignment] do |l|%>
     <label>Leave  :</label><br/>
       <%= l.collection_select :leave_head_id, LeaveHead.all, :id, :name, prompt: "select leavehead"%><br/><br/>
 
 
-    <%= l.submit %>
+
+<%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+ <i class="icon-ok icon-white"></i> Save
+<% end %>
+
+
 <%end%>
+</center>

@@ -7,7 +7,7 @@ class LeaveStructuresController < ApplicationController
 		@leave_structure = LeaveStructure.new
 	end
 	def create
-		@leave_structure = LeaveStructure.new(leave_params)
+		@leave_structure = LeaveStructure.new(structure_params)
 		if @leave_structure.save
 			redirect_to leave_structures_path
 		else
@@ -22,7 +22,7 @@ end
 
 private 
 
-def leave_params
-    params.require(:leave_structure).permit(:name)
+def structure_params
+    params(:leave_structure).permit(:name)
 
 end

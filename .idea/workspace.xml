@@ -6,22 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="50468eb2-acc6-4446-a2e1-549bcdd4190e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/employees_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/employees_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/leave_balances_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/leave_balances_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/leave_heads_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/leave_heads_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/employee.rb" afterPath="$PROJECT_DIR$/app/models/employee.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/leave_head.rb" afterPath="$PROJECT_DIR$/app/models/leave_head.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/details/index.html.erb" afterPath="$PROJECT_DIR$/app/views/details/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employees/_list.html.haml" afterPath="$PROJECT_DIR$/app/views/employees/_list.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employees/index.html.haml" afterPath="$PROJECT_DIR$/app/views/employees/index.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/employees/show.html.erb" afterPath="$PROJECT_DIR$/app/views/employees/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/leave_applies_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/leave_applies_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/leave_assignments_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/leave_assignments_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/leave_structures_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/leave_structures_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/leave_apply.rb" afterPath="$PROJECT_DIR$/app/models/leave_apply.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/leave_structure.rb" afterPath="$PROJECT_DIR$/app/models/leave_structure.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/leave_balances/index.html.erb" afterPath="$PROJECT_DIR$/app/views/leave_balances/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/leave_heads/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/leave_heads/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/leave_heads/index.html.erb" afterPath="$PROJECT_DIR$/app/views/leave_heads/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/leave_allotments/index.html.erb" afterPath="$PROJECT_DIR$/app/views/leave_allotments/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/leave_applies/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/leave_applies/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/leave_applies/index.html.erb" afterPath="$PROJECT_DIR$/app/views/leave_applies/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/leave_applies/new.html.erb" afterPath="$PROJECT_DIR$/app/views/leave_applies/new.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
     </list>
     <ignored path="EmployeeN.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/app/models/employee.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -84,54 +80,40 @@
       <file leaf-file-name="_list.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/employees/_list.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-32.5">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state vertical-scroll-proportion="-30.0">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
-                <marker date="1453116630000" expanded="true" signature="0:194" placeholder="%ol{:class =&gt; &quot;breadcrumb&quot;}" />
-                <marker date="1453116630000" expanded="true" signature="30:71" placeholder="%li" />
-                <marker date="1453116630000" expanded="true" signature="38:71" placeholder="= link_to &quot;Details&quot;, details_path" />
-                <marker date="1453116630000" expanded="true" signature="74:133" placeholder="%li" />
-                <marker date="1453116630000" expanded="true" signature="82:133" placeholder="= link_to &quot;salarystructure&quot;, salary_structures_path" />
-                <marker date="1453116630000" expanded="true" signature="136:194" placeholder="%li.active" />
-                <marker date="1453116630000" expanded="true" signature="152:194" placeholder="= link_to &quot;new employee&quot;,new_employee_path" />
-                <marker date="1453116630000" expanded="true" signature="197:1274" placeholder="%table#myTable.table" />
-                <marker date="1453116630000" expanded="true" signature="220:454" placeholder="%thead" />
-                <marker date="1453116630000" expanded="true" signature="231:454" placeholder="%tr" />
-                <marker date="1453116630000" expanded="true" signature="241:264" placeholder="%th" />
-                <marker date="1453116630000" expanded="true" signature="253:264" placeholder="Employee Id" />
-                <marker date="1453116630000" expanded="true" signature="271:287" placeholder="%th" />
-                <marker date="1453116630000" expanded="true" signature="283:287" placeholder="Name" />
-                <marker date="1453116630000" expanded="true" signature="294:319" placeholder="%th" />
-                <marker date="1453116630000" expanded="true" signature="306:319" placeholder="Date Of Birth" />
-                <marker date="1453116630000" expanded="true" signature="326:344" placeholder="%th" />
-                <marker date="1453116630000" expanded="true" signature="338:344" placeholder="Gender" />
-                <marker date="1453116630000" expanded="true" signature="351:378" placeholder="%th" />
-                <marker date="1453116630000" expanded="true" signature="363:378" placeholder="Date of Joining" />
-                <marker date="1453116630000" expanded="true" signature="385:404" placeholder="%th" />
-                <marker date="1453116630000" expanded="true" signature="397:404" placeholder="Address" />
-                <marker date="1453116630000" expanded="true" signature="411:428" placeholder="%th" />
-                <marker date="1453116630000" expanded="true" signature="423:428" placeholder="State" />
-                <marker date="1453116630000" expanded="true" signature="435:454" placeholder="%th" />
-                <marker date="1453116630000" expanded="true" signature="447:454" placeholder="Perform" />
-                <marker date="1453116630000" expanded="true" signature="457:1274" placeholder="-@employees.each do |employee|" />
-                <marker date="1453116630000" expanded="true" signature="492:1274" placeholder="%tbody" />
-                <marker date="1453116630000" expanded="true" signature="505:1274" placeholder="%tr" />
-                <marker date="1453116630000" expanded="true" signature="517:544" placeholder="%td" />
-                <marker date="1453116630000" expanded="true" signature="531:544" placeholder="= employee.id" />
-                <marker date="1453116630000" expanded="true" signature="553:599" placeholder="%td" />
-                <marker date="1453116630000" expanded="true" signature="567:599" placeholder="= link_to employee.name,employee" />
-                <marker date="1453116630000" expanded="true" signature="608:646" placeholder="%td" />
-                <marker date="1453116630000" expanded="true" signature="622:646" placeholder="= employee.date_of_birth" />
-                <marker date="1453116630000" expanded="true" signature="655:686" placeholder="%td" />
-                <marker date="1453116630000" expanded="true" signature="669:686" placeholder="= employee.gender" />
-                <marker date="1453116630000" expanded="true" signature="695:735" placeholder="%td" />
-                <marker date="1453116630000" expanded="true" signature="709:735" placeholder="= employee.date_of_joining" />
-                <marker date="1453116630000" expanded="true" signature="744:776" placeholder="%td" />
-                <marker date="1453116630000" expanded="true" signature="758:776" placeholder="= employee.address" />
-                <marker date="1453116630000" expanded="true" signature="785:826" placeholder="%td" />
-                <marker date="1453116630000" expanded="true" signature="799:826" placeholder="= employee.state.try(:name)" />
-                <marker date="1453116630000" expanded="true" signature="835:1274" placeholder="%td" />
-                <marker date="1453116630000" expanded="true" signature="849:920" placeholder="= link_to &quot;edit&quot;,edit_employee_path(employee), class: 'btn btn-success'" />
+                <marker date="1453200781000" expanded="true" signature="0:194" placeholder="%ol{:class =&gt; &quot;breadcrumb&quot;}" />
+                <marker date="1453200781000" expanded="true" signature="30:71" placeholder="%li" />
+                <marker date="1453200781000" expanded="true" signature="38:71" placeholder="= link_to &quot;Details&quot;, details_path" />
+                <marker date="1453200781000" expanded="true" signature="74:133" placeholder="%li" />
+                <marker date="1453200781000" expanded="true" signature="82:133" placeholder="= link_to &quot;salarystructure&quot;, salary_structures_path" />
+                <marker date="1453200781000" expanded="true" signature="136:194" placeholder="%li.active" />
+                <marker date="1453200781000" expanded="true" signature="152:194" placeholder="= link_to &quot;new employee&quot;,new_employee_path" />
+                <marker date="1453200781000" expanded="true" signature="197:835" placeholder="%table#myTable.table" />
+                <marker date="1453200781000" expanded="true" signature="220:454" placeholder="%thead" />
+                <marker date="1453200781000" expanded="true" signature="231:454" placeholder="%tr" />
+                <marker date="1453200781000" expanded="true" signature="241:264" placeholder="%th" />
+                <marker date="1453200781000" expanded="true" signature="253:264" placeholder="Employee Id" />
+                <marker date="1453200781000" expanded="true" signature="283:287" placeholder="Name" />
+                <marker date="1453200781000" expanded="true" signature="306:319" placeholder="Date Of Birth" />
+                <marker date="1453200781000" expanded="true" signature="338:344" placeholder="Gender" />
+                <marker date="1453200781000" expanded="true" signature="363:378" placeholder="Date of Joining" />
+                <marker date="1453200781000" expanded="true" signature="397:404" placeholder="Address" />
+                <marker date="1453200781000" expanded="true" signature="423:428" placeholder="State" />
+                <marker date="1453200781000" expanded="true" signature="447:454" placeholder="Perform" />
+                <marker date="1453200781000" expanded="true" signature="457:835" placeholder="-@employees.each do |employee|" />
+                <marker date="1453200781000" expanded="true" signature="492:835" placeholder="%tbody" />
+                <marker date="1453200781000" expanded="true" signature="505:835" placeholder="%tr" />
+                <marker date="1453200781000" expanded="true" signature="517:544" placeholder="%td" />
+                <marker date="1453200781000" expanded="true" signature="531:544" placeholder="= employee.id" />
+                <marker date="1453200781000" expanded="true" signature="567:599" placeholder="= link_to employee.name,employee" />
+                <marker date="1453200781000" expanded="true" signature="622:646" placeholder="= employee.date_of_birth" />
+                <marker date="1453200781000" expanded="true" signature="669:686" placeholder="= employee.gender" />
+                <marker date="1453200781000" expanded="true" signature="709:735" placeholder="= employee.date_of_joining" />
+                <marker date="1453200781000" expanded="true" signature="758:776" placeholder="= employee.address" />
+                <marker date="1453200781000" expanded="true" signature="799:826" placeholder="= employee.state.try(:name)" />
+                <marker date="1453200781000" expanded="true" signature="833:835" placeholder="= link_to &quot;X&quot;,employee_path(employee), method: :delete, data: {confirm: &quot;Are you sure?&quot;},class: 'btn btn-danger'" />
               </folding>
             </state>
           </provider>
@@ -150,9 +132,22 @@
       <file leaf-file-name="index.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/employees/index.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.0">
-              <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
-              <folding />
+            <state vertical-scroll-proportion="-14.375">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <marker date="1453180737000" expanded="true" signature="81:102" placeholder="%h3 List of Employees" />
+                <marker date="1453180737000" expanded="true" signature="129:394" placeholder=".well" />
+                <marker date="1453180737000" expanded="true" signature="139:228" placeholder="%p No employee in the database. You can choose the following options to upload employees:" />
+                <marker date="1453180737000" expanded="true" signature="233:394" placeholder="%ol" />
+                <marker date="1453180737000" expanded="true" signature="243:310" placeholder="%li Create record with form manually. Click to Add Employee button." />
+                <marker date="1453180737000" expanded="true" signature="396:420" placeholder="- else" />
+                <marker date="1453180737000" expanded="true" signature="406:420" placeholder="=render 'list'" />
+                <marker date="1453180737000" expanded="true" signature="422:442" placeholder="%h3 Import Employees" />
+                <marker date="1453180737000" expanded="true" signature="444:558" placeholder="%p" />
+                <marker date="1453180737000" expanded="true" signature="449:458" placeholder="Download:" />
+                <marker date="1453180737000" expanded="true" signature="461:507" placeholder="= link_to &quot;CSV&quot;, employees_path(format: &quot;csv&quot;)" />
+                <marker date="1453180737000" expanded="true" signature="510:558" placeholder="= link_to &quot;Excel&quot;, employees_path(format: &quot;xls&quot;)" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -190,8 +185,8 @@
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/employees/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23659305">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.023659306">
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -1271,16 +1266,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/employees/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0">
-          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
-          <folding />
+        <state vertical-scroll-proportion="-14.375">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <marker date="1453180737000" expanded="true" signature="81:102" placeholder="%h3 List of Employees" />
+            <marker date="1453180737000" expanded="true" signature="129:394" placeholder=".well" />
+            <marker date="1453180737000" expanded="true" signature="139:228" placeholder="%p No employee in the database. You can choose the following options to upload employees:" />
+            <marker date="1453180737000" expanded="true" signature="233:394" placeholder="%ol" />
+            <marker date="1453180737000" expanded="true" signature="243:310" placeholder="%li Create record with form manually. Click to Add Employee button." />
+            <marker date="1453180737000" expanded="true" signature="396:420" placeholder="- else" />
+            <marker date="1453180737000" expanded="true" signature="406:420" placeholder="=render 'list'" />
+            <marker date="1453180737000" expanded="true" signature="422:442" placeholder="%h3 Import Employees" />
+            <marker date="1453180737000" expanded="true" signature="444:558" placeholder="%p" />
+            <marker date="1453180737000" expanded="true" signature="449:458" placeholder="Download:" />
+            <marker date="1453180737000" expanded="true" signature="461:507" placeholder="= link_to &quot;CSV&quot;, employees_path(format: &quot;csv&quot;)" />
+            <marker date="1453180737000" expanded="true" signature="510:558" placeholder="= link_to &quot;Excel&quot;, employees_path(format: &quot;xls&quot;)" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/employee.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1295,54 +1303,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/employees/_list.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.5">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state vertical-scroll-proportion="-30.0">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
-            <marker date="1453116630000" expanded="true" signature="0:194" placeholder="%ol{:class =&gt; &quot;breadcrumb&quot;}" />
-            <marker date="1453116630000" expanded="true" signature="30:71" placeholder="%li" />
-            <marker date="1453116630000" expanded="true" signature="38:71" placeholder="= link_to &quot;Details&quot;, details_path" />
-            <marker date="1453116630000" expanded="true" signature="74:133" placeholder="%li" />
-            <marker date="1453116630000" expanded="true" signature="82:133" placeholder="= link_to &quot;salarystructure&quot;, salary_structures_path" />
-            <marker date="1453116630000" expanded="true" signature="136:194" placeholder="%li.active" />
-            <marker date="1453116630000" expanded="true" signature="152:194" placeholder="= link_to &quot;new employee&quot;,new_employee_path" />
-            <marker date="1453116630000" expanded="true" signature="197:1274" placeholder="%table#myTable.table" />
-            <marker date="1453116630000" expanded="true" signature="220:454" placeholder="%thead" />
-            <marker date="1453116630000" expanded="true" signature="231:454" placeholder="%tr" />
-            <marker date="1453116630000" expanded="true" signature="241:264" placeholder="%th" />
-            <marker date="1453116630000" expanded="true" signature="253:264" placeholder="Employee Id" />
-            <marker date="1453116630000" expanded="true" signature="271:287" placeholder="%th" />
-            <marker date="1453116630000" expanded="true" signature="283:287" placeholder="Name" />
-            <marker date="1453116630000" expanded="true" signature="294:319" placeholder="%th" />
-            <marker date="1453116630000" expanded="true" signature="306:319" placeholder="Date Of Birth" />
-            <marker date="1453116630000" expanded="true" signature="326:344" placeholder="%th" />
-            <marker date="1453116630000" expanded="true" signature="338:344" placeholder="Gender" />
-            <marker date="1453116630000" expanded="true" signature="351:378" placeholder="%th" />
-            <marker date="1453116630000" expanded="true" signature="363:378" placeholder="Date of Joining" />
-            <marker date="1453116630000" expanded="true" signature="385:404" placeholder="%th" />
-            <marker date="1453116630000" expanded="true" signature="397:404" placeholder="Address" />
-            <marker date="1453116630000" expanded="true" signature="411:428" placeholder="%th" />
-            <marker date="1453116630000" expanded="true" signature="423:428" placeholder="State" />
-            <marker date="1453116630000" expanded="true" signature="435:454" placeholder="%th" />
-            <marker date="1453116630000" expanded="true" signature="447:454" placeholder="Perform" />
-            <marker date="1453116630000" expanded="true" signature="457:1274" placeholder="-@employees.each do |employee|" />
-            <marker date="1453116630000" expanded="true" signature="492:1274" placeholder="%tbody" />
-            <marker date="1453116630000" expanded="true" signature="505:1274" placeholder="%tr" />
-            <marker date="1453116630000" expanded="true" signature="517:544" placeholder="%td" />
-            <marker date="1453116630000" expanded="true" signature="531:544" placeholder="= employee.id" />
-            <marker date="1453116630000" expanded="true" signature="553:599" placeholder="%td" />
-            <marker date="1453116630000" expanded="true" signature="567:599" placeholder="= link_to employee.name,employee" />
-            <marker date="1453116630000" expanded="true" signature="608:646" placeholder="%td" />
-            <marker date="1453116630000" expanded="true" signature="622:646" placeholder="= employee.date_of_birth" />
-            <marker date="1453116630000" expanded="true" signature="655:686" placeholder="%td" />
-            <marker date="1453116630000" expanded="true" signature="669:686" placeholder="= employee.gender" />
-            <marker date="1453116630000" expanded="true" signature="695:735" placeholder="%td" />
-            <marker date="1453116630000" expanded="true" signature="709:735" placeholder="= employee.date_of_joining" />
-            <marker date="1453116630000" expanded="true" signature="744:776" placeholder="%td" />
-            <marker date="1453116630000" expanded="true" signature="758:776" placeholder="= employee.address" />
-            <marker date="1453116630000" expanded="true" signature="785:826" placeholder="%td" />
-            <marker date="1453116630000" expanded="true" signature="799:826" placeholder="= employee.state.try(:name)" />
-            <marker date="1453116630000" expanded="true" signature="835:1274" placeholder="%td" />
-            <marker date="1453116630000" expanded="true" signature="849:920" placeholder="= link_to &quot;edit&quot;,edit_employee_path(employee), class: 'btn btn-success'" />
+            <marker date="1453200781000" expanded="true" signature="0:194" placeholder="%ol{:class =&gt; &quot;breadcrumb&quot;}" />
+            <marker date="1453200781000" expanded="true" signature="30:71" placeholder="%li" />
+            <marker date="1453200781000" expanded="true" signature="38:71" placeholder="= link_to &quot;Details&quot;, details_path" />
+            <marker date="1453200781000" expanded="true" signature="74:133" placeholder="%li" />
+            <marker date="1453200781000" expanded="true" signature="82:133" placeholder="= link_to &quot;salarystructure&quot;, salary_structures_path" />
+            <marker date="1453200781000" expanded="true" signature="136:194" placeholder="%li.active" />
+            <marker date="1453200781000" expanded="true" signature="152:194" placeholder="= link_to &quot;new employee&quot;,new_employee_path" />
+            <marker date="1453200781000" expanded="true" signature="197:835" placeholder="%table#myTable.table" />
+            <marker date="1453200781000" expanded="true" signature="220:454" placeholder="%thead" />
+            <marker date="1453200781000" expanded="true" signature="231:454" placeholder="%tr" />
+            <marker date="1453200781000" expanded="true" signature="241:264" placeholder="%th" />
+            <marker date="1453200781000" expanded="true" signature="253:264" placeholder="Employee Id" />
+            <marker date="1453200781000" expanded="true" signature="283:287" placeholder="Name" />
+            <marker date="1453200781000" expanded="true" signature="306:319" placeholder="Date Of Birth" />
+            <marker date="1453200781000" expanded="true" signature="338:344" placeholder="Gender" />
+            <marker date="1453200781000" expanded="true" signature="363:378" placeholder="Date of Joining" />
+            <marker date="1453200781000" expanded="true" signature="397:404" placeholder="Address" />
+            <marker date="1453200781000" expanded="true" signature="423:428" placeholder="State" />
+            <marker date="1453200781000" expanded="true" signature="447:454" placeholder="Perform" />
+            <marker date="1453200781000" expanded="true" signature="457:835" placeholder="-@employees.each do |employee|" />
+            <marker date="1453200781000" expanded="true" signature="492:835" placeholder="%tbody" />
+            <marker date="1453200781000" expanded="true" signature="505:835" placeholder="%tr" />
+            <marker date="1453200781000" expanded="true" signature="517:544" placeholder="%td" />
+            <marker date="1453200781000" expanded="true" signature="531:544" placeholder="= employee.id" />
+            <marker date="1453200781000" expanded="true" signature="567:599" placeholder="= link_to employee.name,employee" />
+            <marker date="1453200781000" expanded="true" signature="622:646" placeholder="= employee.date_of_birth" />
+            <marker date="1453200781000" expanded="true" signature="669:686" placeholder="= employee.gender" />
+            <marker date="1453200781000" expanded="true" signature="709:735" placeholder="= employee.date_of_joining" />
+            <marker date="1453200781000" expanded="true" signature="758:776" placeholder="= employee.address" />
+            <marker date="1453200781000" expanded="true" signature="799:826" placeholder="= employee.state.try(:name)" />
+            <marker date="1453200781000" expanded="true" signature="833:835" placeholder="= link_to &quot;X&quot;,employee_path(employee), method: :delete, data: {confirm: &quot;Are you sure?&quot;},class: 'btn btn-danger'" />
           </folding>
         </state>
       </provider>
@@ -1373,8 +1367,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/employees/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23659305">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.023659306">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding />
         </state>
       </provider>

@@ -11,6 +11,7 @@ class Employee < ActiveRecord::Base
   has_many :leaves
   has_many :allot_leaves
   has_many :leave_allotments
+  has_many :leave_employees
 
   belongs_to :leave_structure
 

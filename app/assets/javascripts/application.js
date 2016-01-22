@@ -27,3 +27,7 @@ if (document.getElementById("employee_name").value == ""){
 }
 }
       
+
+$(document).on("page:load ready", function(){
+    $("input.datepicker").datepicker();
+});

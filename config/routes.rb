@@ -15,14 +15,18 @@ Rails.application.routes.draw do
   resources :dashboards
 
   resources :leave_balances
+  resources :leave_details
 
-  resources :employees 
+
+
+  resources :employees do
+    resources :leave_employees
+  end
+  resources :pay_months
   
   resources :leave_allotments do
-    resources :leave_applies 
-    end
-
-
+  resources :leave_applies 
+  end
 
   resources :employees do
   resources :leave_heads 

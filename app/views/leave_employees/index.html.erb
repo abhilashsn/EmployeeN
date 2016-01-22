@@ -1,0 +1,91 @@
+<center>
+<h3 style="color:red"><%= @employee.name.upcase %></h3>
+<%= render "form"%> 
+</center>
+
+
+
+
+<table class="table table-bordered" id="myTable">
+  <thead>
+    <tr>
+      <th>
+        Employee Id
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Designation
+      </th>
+      <th>
+        Department
+      </th>
+     
+      <th>
+        From 
+      </th>
+      <th>
+      	To
+      </th>	
+      <th>
+      	Number of Days
+      </th>
+     <th>
+     	type
+     </th>
+     <th>
+     	month
+     </th>
+
+
+    </thead>
+  </tr>
+  <%@leave_employees.each do |leave_employee|%>
+    <tbody>
+      <tr>
+        <td>
+          <%= leave_employee.employee.try(:id)%>
+        </td>
+        <td>
+          <%= leave_employee.employee.try(:name)%>
+        </td>
+        <td>
+          <%= leave_employee.employee.details.take.try(:designation) %>
+        </td>
+        <td>
+          <%= leave_employee.employee.details.take.try(:department)%>
+        </td>
+		<td>
+          <%= leave_employee.from_date%>
+        </td>
+        <td>
+        	<%= leave_employee.to_date%> 
+        </td>
+        <td>
+        	<%= leave_employee.value%>
+        </td>
+        <td>  
+
+         <%= leave_employee.head_name%> 
+
+        </td>
+        <td>
+         <%= leave_employee.from_date.strftime("%b")	%>	
+        </td>
+
+
+      </tr>
+    </tbody>
+  <%end%>
+
+
+
+
+
+
+
+
+
+      
+

@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<center>
+<h1 style="color:#9C2542">Create New PayMonth</h1><hr/>
+
+
+<%= render "form"%>
+
+</center><br/>
+
+
+<table calss="table" id="myTable">
+  <thead>
+    <tr>
+      <th> Number of Days </th>
+      <th> From Date </th>
+      <th> To Date </th>
+      <th> Action </th>
+    </tr>
+  </thead>
+
+
+
+
+  <tbody>
+    <% @pays.each do |pay| %>
+      <tr>
+
+
+        <td><%= pay.from_date.strftime("%b")%></td>
+        <td><%= pay.no_of_days %></td>
+        <td><%= pay.from_date%></td>
+        <td><%= pay.to_date%></td>
+        <td><%= link_to pay_month_path(pay), method: :delete, data: { confirm: 'Are you sure?' } do %><span class = "glyphicon glyphicon-trash  "></span><% end %></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

@@ -1,0 +1,2 @@
+module PayMonthsHelper
+end

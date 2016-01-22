@@ -25,10 +25,17 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
 <script>
   $(function() {
-    $( "#batch_start_date").datepicker();
+    $("#batch_start_date").datepicker();
     $('#batch_end_date').datepicker();
+    $('#paymonth_from_date').datepicker({dateFormat: "yy-mm-dd"});
+    $('#emp1_from_date').datepicker({dateFormat: "yy-mm-dd",changeMonth: true,
+      changeYear: true});
+    $('#emp2_to_date').datepicker({dateFormat: "yy-mm-dd",changeMonth: true,
+      changeYear: true}); 
   });
   </script>
+
+ 
 
 
 
@@ -92,18 +99,23 @@
       <% end %>
         <%= link_to "Details", details_path %></li>
 
-      <% if controller.controller_name == "salarystructures" %>
-        <li class="active">
-      <% else %>
-        <li>
-      <% end %>
-        <%= link_to "salarystructures", salary_structures_path %></li>
-
+    
         <% if controller.controller_name == "leaveheads" %>
             <li class="active">
         <% else %>
             <li>
         <% end %>
+
+
+         <% if controller.controller_name == "pay_months" %>
+        <li class="active">
+      <% else %>
+        <li>
+      <% end %>
+        <%= link_to "paymonths", pay_months_path %></li>
+
+
+
         <li class="dropdown">
           <ul class="dropdown-menu">
 
@@ -116,6 +128,8 @@
             <li> <%= link_to "LeaveBalance", leave_balances_path%></li>
             <li> <%= link_to "LeaveStructure", leave_structures_path%></li>
             <li> <%= link_to "LeaveAllotment", leave_allotments_path%></li>
+            <li> <%= link_to "salarystructures", salary_structures_path %></li>
+            <li> <%= link_to "leavedetails", leave_details_path %></li>
 
 
           </ul>

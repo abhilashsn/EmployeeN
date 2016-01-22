@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160119104716) do
+ActiveRecord::Schema.define(version: 20160122084736) do
 
   create_table "allot_leaves", force: :cascade do |t|
     t.string   "name"
@@ -62,9 +62,10 @@ ActiveRecord::Schema.define(version: 20160119104716) do
     t.string   "gender"
     t.date     "date_of_joining"
     t.text     "address"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "state_id"
+    t.integer  "leave_structure_id"
   end
 
   create_table "leave_allotments", force: :cascade do |t|
@@ -91,6 +92,8 @@ ActiveRecord::Schema.define(version: 20160119104716) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "leave_allotment_id"
+    t.date     "leave_date"
+    t.string   "head_values"
   end
 
   create_table "leave_assignments", force: :cascade do |t|
@@ -105,6 +108,22 @@ ActiveRecord::Schema.define(version: 20160119104716) do
     t.datetime "updated_at",     null: false
     t.integer  "employee_id"
     t.integer  "balance_number"
+  end
+
+  create_table "leave_details", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leave_employees", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "employee_id"
+    t.string   "value"
+    t.integer  "structure_id"
+    t.date     "from_date"
+    t.date     "to_date"
+    t.string   "head_name"
   end
 
   create_table "leave_heads", force: :cascade do |t|
@@ -131,6 +150,15 @@ ActiveRecord::Schema.define(version: 20160119104716) do
 
   create_table "numbers", force: :cascade do |t|
     t.integer  "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pay_months", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "no_of_days"
+    t.date     "from_date"
+    t.date     "to_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

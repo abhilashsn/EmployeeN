@@ -7,4 +7,6 @@ class LeaveStructure < ActiveRecord::Base
   	has_many :leave_allotments, :through => :leave_appends
 
   	has_many :employees
+
+  	
 end

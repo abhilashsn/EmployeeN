@@ -23,7 +23,7 @@
 	<tr>
       <td><%= leave_allotment.employee.try(:name) %></td>
     	<td><%= leave_allotment.leave_structure.try(:name)%></td>
-    	<td> <%= link_to "apply", leave_allotment_leave_applies_path(leave_allotment.id)%></td>
+    	<td> <%= link_to "set", leave_allotment_leave_applies_path(leave_allotment.id)%></td>
 </tr>
 <%end%>
 </tbody>
